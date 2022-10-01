@@ -14,11 +14,7 @@ export class AppComponent {
   title = 'poker'
   hands: Hand[] = []
 
-  constructor() {
-    const cropier = new Cropier()
-    cropier.rematch(4, 5)
-    this.hands = cropier.hands
-  }
+  constructor() {}
 
   play() {
     const cropier = new Cropier()
