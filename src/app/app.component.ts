@@ -1,9 +1,10 @@
 import { Component } from '@angular/core'
-import { Card } from './model/card'
-import { Cropier } from './model/croupier'
-import { Deck } from './model/deck'
-import { Hand } from './model/hand'
-import { Rule } from './model/rule'
+import { Rank } from './constant/ranks'
+import { Suits } from './constant/suits'
+import { Card } from './factory/card'
+import { Cropier } from './factory/croupier'
+import { Hand } from './factory/hand'
+import { Rule } from './factory/rule'
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,17 @@ export class AppComponent {
   title = 'poker'
   hands: Hand[] = []
 
-  constructor() {}
+  constructor() {
+    const rule = new Rule()
+    const c: Card[] = [
+      new Card(Rank._10, Suits.DIAMONDS),
+      new Card(Rank._10, Suits.CLUBS),
+      new Card(Rank._3, Suits.HEARTS),
+      new Card(Rank._3, Suits.HEARTS),
+      new Card(Rank._3, Suits.SPADES),
+    ]
+    console.log(rule.assignToMatrix(c))
+  }
 
   play() {
     const cropier = new Cropier()

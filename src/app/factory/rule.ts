@@ -120,13 +120,7 @@ export class Rule {
   }
 
   public assignToMatrix(cards: Card[]) {
-    // return [
-    //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    //   [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1],
-    //   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    // ]
-    let matrix: number[][] = MATRIX_OF_SUITS.map(() => [...MATRIX_OF_RANK])
+    let matrix: number[][] = [...MATRIX_OF_SUITS].map(() => [...MATRIX_OF_RANK])
     cards.forEach((card) => {
       const suitIndex = INDEX_OF_SUITS.findIndex(
         (suits: Suits) => card.suits === suits
