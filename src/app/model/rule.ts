@@ -59,11 +59,8 @@ export class Rule {
       rankCombinations = [1, ...rankCombinations]
     }
 
-    console.log(firstIndex, rankCombinations)
-
     if (
       cards.some((el, idx) => {
-        console.log(rankCombinations[firstIndex + idx])
         return rankCombinations[firstIndex + idx] === 0
       })
     ) {
@@ -119,7 +116,6 @@ export class Rule {
 
     const firstIndex = rankCombinations.findIndex((com) => com === 1)
     const isRoyal = firstIndex === 8
-    console.log(rankCombinations[firstIndex])
     return isRoyal && this.isStraightFlush(cards)
   }
 
@@ -136,7 +132,7 @@ export class Rule {
         (suits: Suits) => card.suits === suits
       )
       const rankIndex = INDEX_OF_RANK.findIndex(
-        (rank: Rank) => card.value === rank
+        (rank: Rank) => card.rank === rank
       )
 
       matrix[suitIndex][rankIndex] = 1

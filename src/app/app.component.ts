@@ -18,9 +18,15 @@ export class AppComponent {
     const cropier = new Cropier()
     cropier.rematch(4, 5)
     this.hands = cropier.hands
-    // console.log(cropier.hands)
+  }
+
+  play() {
+    const cropier = new Cropier()
+    cropier.rematch(4, 5)
+    this.hands = cropier.hands
 
     // const rule = new Rule()
+    // console.log(cropier.hands)
     // this.hands.forEach((element) => {
     //   console.log(rule.assignToMatrix(element.cards), element.cards)
     //   console.log('**Royal Flush** =>', rule.isRoyalFlush(element.cards))
@@ -33,11 +39,5 @@ export class AppComponent {
     //   console.log('isTwoPair =>', rule.isTwoPair(element.cards))
     //   console.log('isOnePair=>', rule.isOnePair(element.cards))
     // })
-  }
-
-  play() {
-    const cropier = new Cropier()
-    cropier.rematch(4, 5)
-    this.hands = cropier.hands
   }
 }

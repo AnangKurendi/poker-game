@@ -10,9 +10,10 @@ export class Cropier {
   rematch(handCount: number, cardCount: number) {
     this.hands = []
     this.hands = this.give(handCount, cardCount)
+    this.pickWinner()
   }
 
-  public give(handCount: number, cardCount: number) {
+  private give(handCount: number, cardCount: number) {
     const deck = new Deck()
     const shuffleCard = deck.shuffle()
 
@@ -24,5 +25,12 @@ export class Cropier {
       })
       return hand
     })
+  }
+
+  private pickWinner() {
+    const cardValues = this.hands.map((hand) => hand.score)
+    const max = Math.max(...cardValues)
+    const index = cardValues.indexOf(max)
+    this.hands[index].winner = true
   }
 }
