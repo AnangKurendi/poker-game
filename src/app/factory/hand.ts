@@ -94,7 +94,7 @@ export class Hand extends Rule {
   }
 
   private sumScore(cards: Card[], combinationScore: number) {
-    const cardScore = cards.map((card) => card.value).reduce((a, b) => a + b, 0)
+    const cardScore: number = cards.map((card) => card.value).reduce((a, b) => a + b, 0)
     return combinationScore + cardScore
   }
 }

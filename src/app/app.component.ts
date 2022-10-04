@@ -31,20 +31,5 @@ export class AppComponent {
     const cropier = new Cropier()
     cropier.rematch(4, 5)
     this.hands = cropier.hands
-
-    // const rule = new Rule()
-    // console.log(cropier.hands)
-    // this.hands.forEach((element) => {
-    //   console.log(rule.assignToMatrix(element.cards), element.cards)
-    //   console.log('**Royal Flush** =>', rule.isRoyalFlush(element.cards))
-    //   console.log('**Straight Flush** =>', rule.isStraightFlush(element.cards))
-    //   console.log('**Four of a Kind** =>', rule.isFourOfKind(element.cards))
-    //   console.log('**Full House** =>', rule.isFullHouse(element.cards))
-    //   console.log('**Flush** =>', rule.isFlush(element.cards))
-    //   console.log('**Straight **=>', rule.isStraight(element.cards))
-    //   console.log('isTreeOfKind =>', rule.isTreeOfKind(element.cards))
-    //   console.log('isTwoPair =>', rule.isTwoPair(element.cards))
-    //   console.log('isOnePair=>', rule.isOnePair(element.cards))
-    // })
   }
 }
